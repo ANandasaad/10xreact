@@ -15,6 +15,7 @@ import PostAPI from './component/RESTAPI/PostAPI';
 import EmpDetails from './component/RESTAPI/EmpDetails';
 import EmpCreate from './component/RESTAPI/EmpCreate';
 import EmpEdit from './component/RESTAPI/EmpEdit';
+import Welcome from './component/Welcome';
 const router=createBrowserRouter([{
       path:'/',
       element:<Body/>,
@@ -30,6 +31,13 @@ const router=createBrowserRouter([{
 ,{
   path:'/edit/:emp',
   element:<EmpEdit/>
+},{
+  path:'/welcome',
+  element:<Welcome/>
+},
+{
+  path:'/newList',
+  element:<NewTodoList/>
 }
 ]
 )

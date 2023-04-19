@@ -28,7 +28,7 @@ const NewTodoList = () => {
   }
   const handleSave=(index)=>{
 
-    const newData=[...toDo];
+    const newData=[...toDo];///
     newData[index]=edit;
     setTodoList(newData);
     setEditingText(-1);
