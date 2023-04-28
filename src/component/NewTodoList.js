@@ -57,8 +57,8 @@ const NewTodoList = () => {
   return (
     <div>
       <h1>TO DO LIST</h1>
-      <textarea value={text} onChange={(e) => setText(e.target.value)} />
-      <button type="submit" onClick={handleSubmit}>
+      <textarea data-testid="task" value={text} onChange={(e) => setText(e.target.value)} />
+      <button type="submit" onClick={handleSubmit} data-testid="btn">
         Add Task
       </button>
       <div>

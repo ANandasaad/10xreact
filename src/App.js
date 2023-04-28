@@ -1,54 +1,50 @@
+import React from "react";
+import Home from "./component/Home";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Contact from "./component/Contact";
+import About from "./component/About";
+import AboutInfo from "./component/AboutInfo";
+import Errorpage from "./component/Errorpage";
+import Login from "./component/Login";
+import SignUp from "./component/SignUp";
+import NewTodoList from "./component/NewTodoList";
+import Counter from "./component/Counter";
+import Declartive from "./component/Declartive";
 
-import './App.css';
-import Form from './component/Form';
-import RenderingList from './component/RenderingList';
-import SplitRender from './component/SplitRender';
-import Recipe from './component/Recipe';
-import ValidateForm from './component/ValidateForm';
-import TodoList from './component/TodoList';
-import NewTodoList from './component/NewTodoList';
-import RestApi from './component/RESTAPI/RestApi';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Body from './component/Body';
-import { Children } from 'react';
-import PostAPI from './component/RESTAPI/PostAPI';
-import EmpDetails from './component/RESTAPI/EmpDetails';
-import EmpCreate from './component/RESTAPI/EmpCreate';
-import EmpEdit from './component/RESTAPI/EmpEdit';
-import Welcome from './component/Welcome';
-const router=createBrowserRouter([{
-      path:'/',
-      element:<Body/>,
-},
-{
-  path:'/create',
-  element:<EmpCreate/>
-}
-,{
-  path:'/details/:emp',
-  element:<EmpDetails/>
-}
-,{
-  path:'/edit/:emp',
-  element:<EmpEdit/>
-},{
-  path:'/welcome',
-  element:<Welcome/>
-},
-{
-  path:'/newList',
-  element:<NewTodoList/>
-}
-]
-)
-function App() {
-  
+const appRoute = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    errorElement:<Errorpage/>
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path:"/signup",
+    element:<SignUp/>
+  }
+  ,{
+    path:'/newlist',
+    element:<NewTodoList/>
+  }
+  ,{
+    path:'/counter',
+    element:<Counter/>
+  },{
+    path:'/declare',
+    element:<Declartive/>
+  }
+
+]);
+
+const App = () => {
   return (
-    <div className="App">
-    <RouterProvider router={router}/>
-   
+    <div>
+      <RouterProvider router={appRoute} />
     </div>
   );
-}
+};
 
 export default App;
